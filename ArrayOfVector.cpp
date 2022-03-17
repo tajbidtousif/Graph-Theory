@@ -30,8 +30,7 @@ int main()
         {
             int x;
             cin >> x;
-            v[i].push_back(x);
-
+            v[i].push_back(x); // push Backing X element
         }
     }
 
