@@ -22,6 +22,7 @@ int main()
     {
         int x, y;
         cin >> x >> y;
+        
         v.push_back(make_pair(x, y));
     }
 
