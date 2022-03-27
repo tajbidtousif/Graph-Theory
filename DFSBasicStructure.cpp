@@ -8,7 +8,9 @@ bool vis[N];
 void DFS(int vertex)
 {
     cout << "Vertex: " << vertex << endl;
+
     vis[vertex] = true;
+    
     for(int child:graph[vertex])
     {
         cout << "per: " << vertex << "child: " << child << endl;
