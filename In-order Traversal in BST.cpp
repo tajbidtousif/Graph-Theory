@@ -1,0 +1,98 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+struct Node{
+
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+};
+
+struct Node *root;
+
+void insert(int value)
+{
+    struct Node *newNode = (struct Node*) malloc(sizeof(struct Node));
+    newNode -> data = value;
+    newNode -> right = NULL; newNode -> left = NULL;
+
+    if(root==NULL)
+    {
+        root = newNode;
+    }
+
+    else{
+        struct Node *temp = root;
+
+        while(1)
+        {
+            if(temp->data>=newNode->data)
+            {
+                //left
+                if(temp->left == NULL)
+                {
+                    temp->left = newNode;
+                    break;
+                }
+
+                else{
+                    temp = temp->left;
+                }
+            }
+            else{
+                //right
+                if(temp->right==NULL)
+                {
+                    temp->right = newNode;
+                    break;
+                }
+                else{
+                    temp = temp->right;
+                }
+            }
+        }
+    }
+}
+
+/*
+ void preorder(struct Node *r)
+    {
+        if(r == NULL) return;
+
+        cout << r->data << " ";
+
+        preorder(r->left);
+        preorder(r->right);
+    }
+*/
+
+void inorder(struct Node *r)
+{
+    // left root right
+
+    if(r==NULL) return;
+
+    inorder(r->left);
+
+    cout << r->data << " ";
+
+    inorder(r->right);
+
+
+}
+
+int main()
+{
+    root = NULL;
+    insert(55);
+    insert(40);
+    insert(60);
+    insert(12);
+    insert(10);
+
+   // preorder(root);
+
+   inorder(root);
+}
