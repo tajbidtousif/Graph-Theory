@@ -15,7 +15,7 @@ void insert(int value)
 {
     struct Node *newNode = (struct Node*) malloc(sizeof(struct Node));
     newNode -> data = value;
-    newNode -> right = NULL; newNode -> left = NULL:
+    newNode -> right = NULL; newNode -> left = NULL;
 
     if(root==NULL)
     {
